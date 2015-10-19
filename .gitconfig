@@ -1,0 +1,51 @@
+# This is Git's per-user configuration file.
+[core]
+	user = Tiago Pinto
+	email = tiago.pinto@onfido.com
+	editor = vim
+	excludesfile = /Users/tiago.pinto/.gitignore_global
+[alias]
+	co = checkout
+	st = status
+	df = diff
+	lg = log --graph --decorate --oneline --date=relative --pretty=format:\"%C(auto)%h%d %C(cyan)%an%Creset %ar - %s\"
+	pl = pull --ff-only
+	ps = push
+	ft = fetch
+	ci = commit
+	br = branch
+	rbc = rebase --continue
+	rbi = rebase -i
+	rba = rebase --abort
+	rbs = rebase --skip
+	mg = merge --no-ff
+[color]
+    branch = auto
+    diff = auto
+    status = auto
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+[user]
+	name = Tiago Pinto
+	email = tiago.pinto@onfido.com
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
